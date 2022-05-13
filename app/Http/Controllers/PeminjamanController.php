@@ -53,6 +53,7 @@ class PeminjamanController extends Controller
             'rombel'	=> $request->rombel,
             'rayon'	=> $request->rayon,
             'jk'=> $request->jk,
+            'status' => $request->status,
         ]);
         return redirect()->route('peminjaman.index')->with('success', 'Buku Berhasil dipinjam');
     }
@@ -102,6 +103,7 @@ class PeminjamanController extends Controller
             'rombel'	=> $request->rombel,
             'rayon'	=> $request->rayon,
             'jk'=> $request->jk,
+            'status' => $request->status,
         ]);
         return redirect()->route('peminjaman.index')->with('success', 'Data Diupdate');
     }

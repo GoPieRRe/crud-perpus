@@ -7,6 +7,7 @@
             @csrf
         <div class="mb-3" id="isinya">
             <input type="hidden" name="petugas" value="{{ auth::user()->name }}" id="">
+            <input type="hidden" name="status" value="{{ __('Belum Dikembalikan') }}" id="">
             <label for="nis" class="form-label">NIS</label>
             <select name="nis" class="form-control" required>
                 <option value="">- NIS -</option>

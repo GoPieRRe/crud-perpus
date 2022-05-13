@@ -16,24 +16,24 @@ return new class extends Migration
     {
         DB::unprepared('CREATE TRIGGER update_student AFTER UPDATE ON students FOR EACH ROW
         BEGIN
-           UPDATE borrowings SET nis=NEW.nis, nama=NEW.nama WHERE nis=OLD.nis;
+           UPDATE peminjaman SET nis=NEW.nis, nama=NEW.nama WHERE nis=OLD.nis;
         END');
 
         DB::unprepared('CREATE TRIGGER update_rombel AFTER UPDATE ON rombel FOR EACH ROW
                 BEGIN
                    UPDATE students SET rombel=NEW.rombels WHERE rombel=OLD.rombels;
-                   UPDATE borrowings SET rombel=NEW.rombels WHERE rombel=OLD.rombels;
+                   UPDATE peminjaman SET rombel=NEW.rombels WHERE rombel=OLD.rombels;
                 END');
         
         DB::unprepared('CREATE TRIGGER update_rayon AFTER UPDATE ON rayon FOR EACH ROW
         BEGIN
            UPDATE students SET rayon=NEW.rayon WHERE rayon=OLD.rayon;
-           UPDATE borrowings SET rayon=NEW.rayon WHERE rayon=OLD.rayon;
+           UPDATE peminjaman SET rayon=NEW.rayon WHERE rayon=OLD.rayon;
         END');
 
         DB::unprepared('CREATE TRIGGER update_book AFTER UPDATE ON book FOR EACH ROW
         BEGIN
-            UPDATE borrowings SET judul_buku=NEW.judul WHERE judul_buku=OLD.judul;
+            UPDATE peminjaman SET judul_buku=NEW.judul WHERE judul_buku=OLD.judul;
         END');
     }
 
