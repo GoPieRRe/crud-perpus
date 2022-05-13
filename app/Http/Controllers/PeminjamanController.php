@@ -82,7 +82,7 @@ class PeminjamanController extends Controller
         $rayon = rayon::all();
         $book = book::all();
         $user = User::all();
-        return view('peminjaman.edit',compact('student','rombel','rayon','book','user'));
+        return view('peminjaman.edit',compact('student','rombel','rayon','book','user','peminjaman'));
     }
 
     /**
@@ -94,17 +94,18 @@ class PeminjamanController extends Controller
      */
     public function update(Request $request, peminjaman $peminjaman)
     {
-        peminjaman::update([
-            'nama' => $request->nama,
-            'judul'	=> $request->judul,	
-            'tgl_kembali' => $request->tgl_kembali,	
-            'petugas' => $request->petugas,
-            'nis'	=> $request->nis,
-            'rombel'	=> $request->rombel,
-            'rayon'	=> $request->rayon,
-            'jk'=> $request->jk,
-            'status' => $request->status,
+        $request->validate([
+            'nama' => "required",
+            'judul'	=> "required",	
+            'tgl_kembali' => "required",	
+            'petugas' => "required",
+            'nis'	=> "required",
+            'rombel'	=> "required",
+            'rayon'	=> "required",
+            'jk'=> "required",
+            'status' => "required",
         ]);
+        $peminjaman->update($request->all());
         return redirect()->route('peminjaman.index')->with('success', 'Data Diupdate');
     }
 

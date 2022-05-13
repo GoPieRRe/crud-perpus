@@ -84,7 +84,7 @@
 								<div id="otherSections" aria-labelledby="navbarDropdown">
                                     <a href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                                     document.getElementById('logout-form').submit(); return confirm('{{ auth::user()->name }} {{ __('Anda ingin Log out?') }}');">
                                         {{ __('Logout') }} <i class="fas fa-sign-out-alt"></i>
                                     </a>
 

@@ -55,8 +55,8 @@ $(document).ready(function(){
                         <th>Judul</th>
                         <th>Tanggal Pinjam</th>
                         <th>Tanggal Kembali</th>
-						<th colspan="2">Actions</th>
 						<th>Status</th>
+						<th colspan="3">Actions</th>
 					</tr>
 				</thead>
                 @foreach ($peminjaman as $b)
@@ -70,7 +70,7 @@ $(document).ready(function(){
                          <td>{{ $b->judul }}</td>
                          <td>{{ $b->tgl_pinjam }}</td>
                          <td>{{ $b->tgl_kembali }}</td>
-						 <td>{{ $b->status }}</td>
+						 <td><button disabled class="@if($b->status == "Belum Dikembalikan"){{ ('btn btn-danger') }}@elseif($b->status == "Di Pinjam"){{ ('btn btn-secondary') }} @elseif($b->status == "Sudah Dikembalikan"){{ ('btn btn-success') }} @else {{ ('btn btn-warning') }} @endif">{{ $b->status }}</button></td>
                          <td>
                              <form action="{{ route('peminjaman.destroy', $b->id) }}" method="POST">
                             
@@ -81,6 +81,7 @@ $(document).ready(function(){
                              <button type="submit" class="btn btn-danger" onclick="return confirm('Are You Sure??')"><i class="fas fa-trash"></i></button>
                             </form>
                          </td>
+						 
                      </tr>
 				</tbody>
                 @endforeach

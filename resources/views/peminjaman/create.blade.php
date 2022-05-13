@@ -7,14 +7,16 @@
             @csrf
         <div class="mb-3" id="isinya">
             <input type="hidden" name="petugas" value="{{ auth::user()->name }}" id="">
-            <input type="hidden" name="status" value="{{ __('Belum Dikembalikan') }}" id="">
+            <input type="hidden" name="status" value="{{ __('Di Pinjam') }}" id="">
+            
             <label for="nis" class="form-label">NIS</label>
             <select name="nis" class="form-control" required>
                 <option value="">- NIS -</option>
                 @foreach ($student as $items)
-                <option value="{{ $items->nis }}">{{ $items->nis }}</option>
+                <option value="{{ $items->nis }}">{{ $items->nis }} - {{ $items->nama }}</option>
                 @endforeach
             </select>
+
             <label for="" class="form-label">Nama Peminjam</label>
             <select name="nama" id="" class="form-control">
                 <option value="">- Nama -</option>
@@ -22,7 +24,8 @@
                 <option value="{{ $item->nama }}">{{ $item->nama }}</option>
                 @endforeach   
             </select>
-        </div>     
+        </div>
+
         <div class="mb-3">
             <label for="rombel" class="form-label">Rombel</label>
             <select name="rombel" id="" class="form-control" required>
@@ -32,6 +35,7 @@
                 @endforeach
             </select>
         </div>
+
         <div class="mb-3">
             <label for="rayon" class="form-label">Rayon</label>
             <select name="rayon" id="" class="form-control" required>
@@ -40,7 +44,8 @@
                 <option value="{{ $item->rayon }}">{{ $item->rayon }}</option>
                 @endforeach
             </select>
-        </div> 
+        </div>
+
         <div class="mb-3">
             <label for="" class="form-label">Jenis Kelamin</label>
             <select name="jk" id="" class="form-control" required>
@@ -49,6 +54,7 @@
                 <option value="Perempuan">{{ __('Perempuan') }}</option>
             </select>
         </div>
+
         <div class="mb-3">
             <label for="judul" class="form-label">Judul</label>
             <select name="judul" id="" class="form-control" required>
@@ -58,14 +64,17 @@
                 @endforeach
             </select>
         </div>
+
         <div class="mb-3">
             <label for="balik" class="form-label">Tanggal Kembali</label>
             <input type="date" name="tgl_kembali" id="balik" class="form-control">
         </div>
+
         <div class="mb-3">
             <button type="submit" class="btn btn-success">Tambah List Pinjam Buku!</button>    
             <a href="{{ route('peminjaman.index') }}" class="btn btn-danger">Back</a>
-        </div>   
+        </div>
+
         </form>
     </div>
 </div>
