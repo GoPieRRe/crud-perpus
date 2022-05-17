@@ -27,7 +27,7 @@ $(document).ready(function(){
 });
 </script>
 <body>
-<div class="container-xl">
+<div class="container-xl py-5">
 	<div class="table-responsive">
 		<div class="table-wrapper">
 			<div class="table-title">
@@ -75,14 +75,16 @@ $(document).ready(function(){
                              <form action="{{ route('peminjaman.destroy', $b->id) }}" method="POST">
                             
                              <a href="{{ route('peminjaman.edit', $b->id) }}" class="btn btn-info"><i class="fas fa-edit"></i></a>
+							 <a href="{{ route('peminjaman.show', $b->id) }}" class="btn btn-primary" onclick="return confirm('Lihat Detail peminjaman??')"><i class="fas fa-eye"></i></a>
 
                              @csrf
 								@method('DELETE')
-                             <button type="submit" class="btn btn-danger" onclick="return confirm('Are You Sure??')"><i class="fas fa-trash"></i></button>
+                             {{-- <button type="submit" class="btn btn-danger" onclick="return confirm('Are You Sure??')"><i class="fas fa-trash"></i></button> --}}
                             </form>
                          </td>
 						 
                      </tr>
+					 
 				</tbody>
                 @endforeach
 			</table>

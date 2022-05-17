@@ -77,15 +77,15 @@
 							<i class="fas fa-user"></i>{{ auth::user()->name }}
 						</a>
 						<ul class="collapse list-unstyled" id="otherSections">
-							{{-- <li>
-								<a  href="#section-3">Index</a>
-							</li> --}}
+							<li>
+								<a  href="">Profile</a>
+							</li>
 							<li>
 								<div id="otherSections" aria-labelledby="navbarDropdown">
                                     <a href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit(); return confirm('{{ auth::user()->name }} {{ __('Anda ingin Log out?') }}');">
-                                        {{ __('Logout') }} <i class="fas fa-sign-out-alt"></i>
+                                       onclick="event.preventDefault(); var cek = confirm('{{ auth::user()->name }} ingin Logout?'); if(cek){
+                                           document.getElementById('logout-form').submit();
+                                       } ">{{ __('Logout') }} <i class="fas fa-sign-out-alt"></i>
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -93,6 +93,7 @@
                                     </form>
                                 </div>
 							</li>
+                            
 						</ul>
 					</li>
 				</ul>

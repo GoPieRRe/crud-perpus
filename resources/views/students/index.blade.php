@@ -27,7 +27,7 @@ $(document).ready(function(){
 });
 </script>
 <body>
-<div class="container-xl">
+<div class="container-xl py-5">
 	<div class="table-responsive">
 		<div class="table-wrapper">
 			<div class="table-title">

@@ -66,7 +66,7 @@ class PeminjamanController extends Controller
      */
     public function show(peminjaman $peminjaman)
     {
-        //
+        return view('peminjaman.show', compact('peminjaman'));
     }
 
     /**
