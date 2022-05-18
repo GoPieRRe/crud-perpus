@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="{{ asset('css/fontawesome.css') }}">
     <link rel="stylesheet" href="{{ asset('css/solid.css') }}">
     <link rel="stylesheet" href="{{ asset('css/reguler.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/uwaw.css') }}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500&display=swap">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -77,9 +78,9 @@
 							<i class="fas fa-user"></i>{{ auth::user()->name }}
 						</a>
 						<ul class="collapse list-unstyled" id="otherSections">
-							<li>
-								<a  href="">Profile</a>
-							</li>
+							{{-- <li>
+								<a  href="{{ route('profile.index') }}">Profile</a>
+							</li> --}}
 							<li>
 								<div id="otherSections" aria-labelledby="navbarDropdown">
                                     <a href="{{ route('logout') }}"
