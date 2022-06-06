@@ -88,7 +88,6 @@
                                            document.getElementById('logout-form').submit();
                                        } ">{{ __('Logout') }} <i class="fas fa-sign-out-alt"></i>
                                     </a>
-
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>

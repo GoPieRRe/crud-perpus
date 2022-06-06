@@ -8,8 +8,8 @@
                 @csrf
                 @method('PUT')
                 <div class="col-xs-12 col-sm-12 col-md-12">
-                    <div class="form-group">
-                        <label for="png">Nama Rombel</label>
+                    <div class="mb-3 text-left">
+                        <label for="png" class="form-label fw-bold">Nama Rombel</label>
                         <input type="text" id="pnr" name="rombels" value="{{ $rombel->rombels }}" placeholder="Masukkan Rombel..."  class="form-control" required>
                     </div>
                 <div class="form-group">

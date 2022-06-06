@@ -7,16 +7,16 @@
 
             @csrf
             @method('PUT')
-        <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Nis</label>
+        <div class="mb-3 text-left">
+            <label for="exampleFormControlInput1" class="form-label fw-bold">Nis</label>
             <input type="number" name="nis" min="1" value="{{ $student->nis }}" class="form-control" id="exampleFormControlInput1" required placeholder="Masukkan Nis..">
         </div>
-        <div class="mb-3">
-            <label for="nama" class="form-label">Nama</label>
+        <div class="mb-3 text-left">
+            <label for="nama" class="form-label fw-bold">Nama</label>
             <input type="text" value="{{ $student->nama }}" name="nama" id="nama" class="form-control" required placeholder="Masukkan Nama...">
         </div>     
-        <div class="mb-3">
-            <label for="rombel" class="form-label">Rombel</label>
+        <div class="mb-3 text-left">
+            <label for="rombel" class="form-label fw-bold">Rombel</label>
             <select name="rombel" id="" class="form-control" required>
                 <option value="{{ $student->rombel }}">{{ $student->rombel }}</option>
                 @foreach ($rombel as $items)
@@ -24,8 +24,8 @@
                 @endforeach
             </select>
         </div>
-        <div class="mb-3">
-            <label for="rayon" class="form-label">Rayon</label>
+        <div class="mb-3 text-left">
+            <label for="rayon" class="form-label fw-bold">Rayon</label>
             <select name="rayon" id="" class="form-control" required>
                 <option value="{{ $student->rayon }}">{{ $student->rayon }}</option>
                 @foreach ($rayons as $item)
@@ -33,14 +33,14 @@
                 @endforeach
             </select>
         </div> 
-        <div class="mb-3">
-            <label for="rayon" class="form-label">Jenis Kelamin</label>
+        <div class="mb-3 text-left">
+            <label for="rayon" class="form-label fw-bold">Jenis Kelamin</label>
             <select name="jk" id="" class="form-control" required>
                 <option value="{{ $student->jk }}">{{ $student->jk }}</option>
                 <option value="{{ __('Laki-Laki') }}">{{ __('Laki-Laki') }}</option>
             </select>
         </div>
-        <div class="mb-3">
+        <div class="mb-3 text-left">
             <button type="submit" class="btn btn-success">Update siswa!</button>
             <a href="{{ route('students.index') }}" class="btn btn-danger">Back</a>
         </div>

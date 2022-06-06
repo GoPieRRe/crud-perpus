@@ -103,9 +103,9 @@
                       <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit">Log
                         in</button>
                         
-                        @if (Route::has('password.request'))
+                        {{-- @if (Route::has('password.request'))
                       <a class="text-muted" href="{{ route('password.request') }}">Forgot password?</a>
-                      @endif
+                      @endif --}}
                     </div>
   
                   </form>
